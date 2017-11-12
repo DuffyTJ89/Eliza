@@ -2,32 +2,38 @@ package main
 
 import (
 	"fmt"
-	"./eliza"
-	//"net/http"
-	//"log"
-)
-/*
- //function that prints the name to the web page
- func server(w http.ResponseWriter, r *http.Request){
-	http.ServeFile(w, r, "ElizaChat.html")
- }//end server
-*/
+	"log"
+	"net/http"
 
+	"./eliza"
+)
+
+//adapted from https://stackoverflow.com/questions/23282311/parse-input-from-html-form-in-golang
+func chat(w http.ResponseWriter, r *http.Request) {
+
+	http.ServeFile(w, r, "web/ElizaChat.html")
+
+	//Call to ParseForm makes form fields available.
+	err := r.ParseForm()
+	if err != nil {
+		// Handle error here via logging and then return
+	}
+	//take user input from the form on ElizaChat
+	userQuestion := r.PostFormValue("userInput")
+	fmt.Println(eliza.Ask((userQuestion))) //id ElizaAnswer
+}
 
 func main() {
 
-	q1 := "hi my name is tom" // test question
+	// test question
+	//q1 := "hi my name is tom"
+	//fmt.Println(eliza.Ask(q1))
 
-	fmt.Println(eliza.Ask(q1))
+	//handle requests by calling chat function
+	http.HandleFunc("/", chat)
 
-	
+	//start webserver and serve on port 8080
+	log.Println("Listening....")
+	http.ListenAndServe(":8080", nil)
+
 }
-
-/*
-//handle requests by calling printName
-	 http.HandleFunc("/", server)
-	 
- 	//start webserver and serve on port 8080
-     log.Println("Listening....")
-     http.ListenAndServe(":8080", nil)
-*/

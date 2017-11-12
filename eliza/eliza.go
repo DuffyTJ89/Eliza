@@ -126,7 +126,7 @@ func Ask(userInput string) string {
 	} // for
 
 	// if we're down here, it means there were no matches;
-	return "Sorry I was on my phone." // catch all.
+	return "Sorry, that's a little above my paygrade." // catch all.
 	/*
 		//patternStr := "name is (.*)" // Hello my name is bob
 		// MustCompile, Compile to make a *regexp.Regexp struct
