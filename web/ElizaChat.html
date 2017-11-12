@@ -1,34 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Eliza</title>
 	<!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
-  </head>
+    <style>
+    body{
+        padding-top: 65px;
+        padding-bottom: 100px;
+    }
+    
+    </style>  
+</head>
   <body>
-    <div class = "container">
-        <h1>ELIZA!</h1>
-        <h2>Chat here : </h2>
-        <a href = "/ElizaChat"> New chat </a>
-        <br/>
-        <!-- Form that takes a number as input and stores it in the name field
-             Uses a HTTP GET request and redirects to /guess
-        -->
-        <form class="form-group" method="GET" action="/ElizaChat">
-            <label>You : &nbsp&nbsp&nbsp </label><input type="textbox" name="output"></input>
-            <br/>
-            <button class="btn btn-success" type="submit">Chat</button>
-        </form>
+        <nav class="navbar fixed-top navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">Eliza</a>
+        </nav>
 
-        <form class="form-group" method="GET" action="/ElizaChat">
+    <div class = "container-fluid">
+     
+        <ul class="list-group">
+        <li class="list-group-item list-group-item-success text-right">Test user
+        <li class="list-group-item list-group-item-primary">Test Eliza
+        </ul>
+     </div>
 
-            <label for="output">ELIZA : &nbsp</label><input type="textbox" name="output"></input>
-
-        </form>
-    </div>
+     <div class="fixed-bottom bg-dark p-2">
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="userInput" placeholder="Talk to eliza...">
+                    </div>
+                </form>
+            </div>
+        </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
