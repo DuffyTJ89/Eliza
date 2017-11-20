@@ -1,5 +1,9 @@
 package main
 
+//func chat
+//adapted from https://stackoverflow.com/questions/23282311/parse-input-from-html-form-in-golang
+
+
 import (
 	"fmt"
 	"log"
@@ -8,7 +12,7 @@ import (
 	"./eliza"
 )
 
-//adapted from https://stackoverflow.com/questions/23282311/parse-input-from-html-form-in-golang
+
 func chat(w http.ResponseWriter, r *http.Request) {
 
 	http.ServeFile(w, r, "web/ElizaChat.html")

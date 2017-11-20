@@ -1,5 +1,8 @@
 package eliza
 
+// https://www.smallsurething.com/implementing-the-famous-eliza-chatbot-in-python/
+
+
 import (
 	"bufio"
 	"fmt"
@@ -19,7 +22,7 @@ type Response struct {
 
 func NewResponse(pattern string, answers []string) Response {
 	response := Response{}
-	re := regexp.MustCompile(pattern)
+	re := regexp.MustCompile(pattern) //fail if there is a mistake in the regular expressions.
 	response.re = re
 	response.answers = answers
 	return response
@@ -61,7 +64,7 @@ func getRandomAnswer(answers []string) string {
 }
 
 func subWords(original string) string {
-	// https://www.smallsurething.com/implementing-the-famous-eliza-chatbot-in-python/
+	
 	//reflections = readLines("file/path")// []string am:are
 
 	if reflections == nil { // map hasn't been made yet
@@ -82,15 +85,15 @@ func subWords(original string) string {
 			"me":     "you",
 		}
 	}
-	// when we're we can be sure reflectiosn map is populated.
+	// the reflections map is populated.
 
 	words := strings.Split(original, " ")
 
 	for index, word := range words {
-		// we want to change the word if it's in the map
+		// change the word if it's in the map
 		val, ok := reflections[word]
 		if ok { // value WAS in the map
-			// we want to swap with the value
+			// swap with the value
 			words[index] = val // eg. you -> me
 		}
 	}
@@ -100,7 +103,7 @@ func subWords(original string) string {
 
 func Ask(userInput string) string {
 
-	// My name is bob
+	
 	responses := buildResponseList()
 
 	for _, resp := range responses { // look at every single response/pattern/answers
@@ -110,7 +113,7 @@ func Ask(userInput string) string {
 			//match[0] is full match, match[1] is the capture group
 			captured := match[1]
 
-			// remove punctuation here! <------
+			// remove punctuation to be added
 
 			captured = subWords(captured)
 
@@ -127,30 +130,5 @@ func Ask(userInput string) string {
 
 	// if we're down here, it means there were no matches;
 	return "Sorry, that's a little above my paygrade." // catch all.
-	/*
-		//patternStr := "name is (.*)" // Hello my name is bob
-		// MustCompile, Compile to make a *regexp.Regexp struct
-		//re := regexp.MustCompile(patternStr)
-
-		if re.MatchString(userInput) {
-			fmt.Println("There was a match!")
-			//re.FindStringSubmatch()
-			match := re.FindStringSubmatch(userInput)
-			//match[0] is full match, match[1] is the capture group
-			captured := match[1]
-			fmt.Println(captured)
-
-			formatString := "Hello %s, it's nice to meet" // this is the format string
-			answer := fmt.Sprintf(formatString, captured)
-			fmt.Println(answer)
-
-		} else {
-			fmt.Println("There was no match")
-		}
-
-		// slice / list of answers, and I return 1 at random
-		// Hi bob
-		// Hello bob
-		// how's it hanging bob
-	*/
+	
 }
