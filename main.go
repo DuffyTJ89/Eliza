@@ -38,10 +38,10 @@ func main() {
 
 	dir:=http.Dir("./web")
 	fileServer:=http.FileServer(dir)
-	http.HandleFunc("/", fileServer)
+	http.Handle("/", fileServer)
 
 	//handle requests by calling chat function
-	http.HandleFunc("/", chat)
+	http.HandleFunc("/chat", chat)
 
 	//start webserver and serve on port 8080
 	log.Println("Listening....")
