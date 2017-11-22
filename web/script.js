@@ -25,18 +25,23 @@ userInput.keypress(function(event){
     queryParameters = {
         "userInput" : text
     }
+    //<li class="list-group-item list-group-item-success">First item</li>
+    //<li class="list-group-item list-group-item-success text-right">
+    //conversation.append("<li id='user' class='list-group'>" + text + "<li class='list-group'>");
+    conversation.append('<li id="user" class="list-group-item list-group-item-success text-right">' + text + "  : User" + '<li class="list-group">');
 
-    conversation.append("<li id='user' class='list-group'>" + text + "<li class='list-group'>");
 
     $.get("/chat", queryParameters).done(function(resp){
         // this code will execute when the request gets a response.
         setTimeout(function(){ // wait 1 second then add element.
-            conversation.append("<li id='eliza' class='list-group'>" + resp + "<li class='list-group'>");
+            conversation.append('<li id="eliza" class="list-group-item list-group-item-primary">'+"ELIZA :  "+  resp +  '<li class="list-group">');
         }, 1000);
         
     }).fail(function(){ // this will run whenever anything goes wrong.
         conversation.append("<li class='list-group'>Error :( </li class='list-group\'>");
     });
 
-    window.scrollTo(0,document.body.scrollHeight);
+    window.scrollTo(0,document.body.scrollHeight); //scroll to the bottom so the latest chat is in view
+
+    
 });
