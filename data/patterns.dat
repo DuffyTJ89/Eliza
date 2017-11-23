@@ -1,4 +1,7 @@
-(?i)name is (.*)
+#Regular expressions
+
+
+name is (.*)
 Hello %s, it's nice to meet you.;It's nice to meet you %s.;%s? That's a funny name.
 (?i)I like (.*)
 Why do you like %s.;You like %s? Are you crazy?

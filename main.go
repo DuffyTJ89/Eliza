@@ -1,9 +1,5 @@
 package main
 
-//func chat
-//adapted from https://stackoverflow.com/questions/23282311/parse-input-from-html-form-in-golang
-
-
 import (
 	"fmt"
 	"log"
@@ -15,28 +11,21 @@ import (
 
 func chat(w http.ResponseWriter, r *http.Request) {
 
-	//http.ServeFile(w, r, "web/ElizaChat.html")
-
 	//Call to ParseForm makes form fields available.
 	err := r.ParseForm()
 	if err != nil {
 		// Handle error here via logging and then return
 	}
-	//take user input from the form on ElizaChat
-	userQuestion := r.URL.Query().Get("userInput")
-	ElizaAnswer:=eliza.Ask(userQuestion)
-	fmt.Fprintf(w, ElizaAnswer)
+	//take user input from the form on index.html
+	userQuestion := r.URL.Query().Get("userInput") //get the users question from the url
+	ElizaAnswer:=eliza.Ask(userQuestion) //pass the user question to the eliza file and get the answer
+	fmt.Fprintf(w, ElizaAnswer) //eliza answer
 
-	//fmt.Println(eliza.Ask((userQuestion))) //id ElizaAnswer
 }
 
 func main() {
 
-	// test question
-	//q1 := "hi my name is tom"
-	//fmt.Println(eliza.Ask(q1))
-
-	dir:=http.Dir("./web")
+	dir:=http.Dir("./web") //all the files needed are in the web folder
 	fileServer:=http.FileServer(dir)
 	http.Handle("/", fileServer)
 

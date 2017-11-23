@@ -2,7 +2,6 @@ package eliza
 
 // https://www.smallsurething.com/implementing-the-famous-eliza-chatbot-in-python/
 
-
 import (
 	"bufio"
 	"fmt"
@@ -15,12 +14,13 @@ import (
 
 var reflections map[string]string
 
+//map to link the Regular expressions with the answers
 type Response struct {
 	re      *regexp.Regexp
 	answers []string
 }
 
-func NewResponse(pattern string, answers []string) Response {
+func NewResponse(pattern string, answers []string) Response { //get eliza's answer
 	response := Response{}
 	re := regexp.MustCompile(pattern) //fail if there is a mistake in the regular expressions.
 	response.re = re
@@ -28,28 +28,27 @@ func NewResponse(pattern string, answers []string) Response {
 	return response
 }
 
-func buildResponseList() []Response {
+func buildResponseList() []Response { //make a list to store the responses
 
 	allResponses := []Response{}
 
-	file, err := os.Open("./data/patterns.dat")
-	if err != nil { // there IS an error
+	file, err := os.Open("./data/patterns.dat") //responses are in the patterns file. RegExp
+	if err != nil {                             // there IS an error
 		panic(err) // crash the program
 	}
 
 	// file exists!
-	defer file.Close() // this will be called AFTER this function.
+	defer file.Close() // this will be called AFTER this function to close the file.
 
 	scanner := bufio.NewScanner(file)
 
-	for scanner.Scan() {
-		//fmt.Println(scanner.Text())
+	for scanner.Scan() { //scan text file to match with the RegExp
 
 		patternStr := scanner.Text()
 		scanner.Scan() // move onto the next line which holds the answers
 		answersAsStr := scanner.Text()
 
-		answerList := strings.Split(answersAsStr, ";")
+		answerList := strings.Split(answersAsStr, ";") //answers are split in patterns.dat by ;
 		resp := NewResponse(patternStr, answerList)
 		allResponses = append(allResponses, resp)
 	}
@@ -57,15 +56,13 @@ func buildResponseList() []Response {
 	return allResponses
 }
 
-func getRandomAnswer(answers []string) string {
+func getRandomAnswer(answers []string) string { //pick out a random answer from possible answer's in the RegExp file
 	rand.Seed(time.Now().UnixNano()) // seed to make it return different values.
 	index := rand.Intn(len(answers)) // Intn generates a number between 0 and num - 1
 	return answers[index]            // can be any element
 }
 
-func subWords(original string) string {
-	
-	//reflections = readLines("file/path")// []string am:are
+func subWords(original string) string { //substitute words from the user so the sentence is from Eliza's point of view and not the users
 
 	if reflections == nil { // map hasn't been made yet
 		reflections = map[string]string{ // will only happen once.
@@ -94,16 +91,14 @@ func subWords(original string) string {
 		val, ok := reflections[word]
 		if ok { // value WAS in the map
 			// swap with the value
-			words[index] = val // eg. you -> me
+			words[index] = val // for example, you changes to me, my to your etc.
 		}
 	}
-
 	return strings.Join(words, " ")
 }
 
-func Ask(userInput string) string {
+func Ask(userInput string) string { //
 
-	
 	responses := buildResponseList()
 
 	for _, resp := range responses { // look at every single response/pattern/answers
@@ -124,11 +119,10 @@ func Ask(userInput string) string {
 			}
 			return formatAnswer
 
-		} // if
+		} //end if
 
-	} // for
+	} // end for
 
 	// if we're down here, it means there were no matches;
-	return "Sorry, that's a little above my paygrade." // catch all.
-	
+	return "Sorry, that's a little above my paygrade. Let's move onto something else..." // catch all.
 }
