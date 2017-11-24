@@ -65,18 +65,18 @@ _Ajax :_
 
 
 _Regular Expressions:_
-*https://regex101.com/
-*http://www.rexegg.com/regex-quickstart.html
-*https://regexr.com/
+* https://regex101.com/
+* http://www.rexegg.com/regex-quickstart.html
+* https://regexr.com/
 
 _Go Lang:_
-*https://golang.org/doc/
+* https://golang.org/doc/
 
 _Html & JavaScript :_
-*https://getbootstrap.com/docs/4.0/getting-started/introduction/
+* https://getbootstrap.com/docs/4.0/getting-started/introduction/
 
 _MarkDown :_
-*https://dillinger.io/
+* https://dillinger.io/
 
 I also used a lot of Class notes and links give through our class site.
 
