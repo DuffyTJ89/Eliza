@@ -1,13 +1,15 @@
-#Regular expressions
-
-
-name is (.*)
+(?i)(Hi|Hello)
+Hello; Hi; What's the craic
+(?i)name is (.*)
 Hello %s, it's nice to meet you.;It's nice to meet you %s.;%s? That's a funny name.
 (?i)I like (.*)
 Why do you like %s.;You like %s? Are you crazy?
-(sorry)
+(?i)(sorry)
 You don't need to say sorry.
 (?i)Why do you (.*)
 Why do you think I %s?;Would you prefer if I didn't %s?
 (?i)I need (.*)
 Why do you need %s?;Would it really help you to get %s?;Are you sure you need %s?;
+(?i)Are you (.*)
+What makes you think I am %s?; Maybe you are %s; A lot of the time I am %s, yes
+
