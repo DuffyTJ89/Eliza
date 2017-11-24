@@ -1,17 +1,21 @@
 (?i)(Hi|Hello)
-Hello; Hi; What's the craic
+Hello, what's your name?; Hi, what's your name?; What's the craic, what is your name?
 (?i)name is (.*)
 Hello %s, it's nice to meet you. Do you know my name?;It's nice to meet you %s. Do you know my name?;%s? That's a weird name, do you know my name?.
-(?i)I like (.*)
+(?i)I (like|Love) (.*)
 Why do you like %s.;You like %s? Good for you. I guess someone has to.
+(?i)I (hate|dislike) (.*)
+Why do you %s?;Well, %s probaly isn't crazy about you either.
 (?i)(sorry)
-You don't need to say sorry.
+No need to say sorry.;It's ok, pretty hard to hurt my feelings.
 (?i)Why do you (.*)
 Why do you think I %s?;Would you prefer if I didn't %s?
 (?i)I need (.*)
 Why do you need %s?;Would it really help you to get %s?;Are you sure you need %s?;
 (?i)Are you (.*)
-What makes you think I am %s?;Maybe you are %s; A lot of the time I am %s, yes
+What makes you think I am %s?;Maybe you are %s; A lot of the time I am %s, yes.
+(?i)You are(.*)
+Maybe you are %s;%s?, are you also %s?
 (?i)Will you (.*)
 Do you really want me to %s;I am just a computer... or am I?;Hmmm, %s , really?
 (?i)(recall|remember)
@@ -26,6 +30,10 @@ Say it two more times and I might appear.... or not.
 Postive, I like it;You seem sure so I'll go along with it
 (?i)(No)
 Negative;Oh ok;Fair enough
+(?i)(mother|mom|mum|aul lady)
+Something tells me you want to talk about your mother.
+(?i)(father|dad|aul lad)
+Something tells me you want to talk about your farther.
 (?i)(.*tell)(.*joke)
 What's the biggest advantage of living in Switzerland?....Well the flag is a big plus.;What do you call cheese that isn't yours? Nacho Cheese.;What do you call a fat psychic? A four-chin teller.;To the man in the wheelchair that stole my camouflage jacket... You can hide but you can't run.
 (?i)(advice)

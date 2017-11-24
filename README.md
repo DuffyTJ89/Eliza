@@ -53,6 +53,7 @@ Below is a list of inputs Eliza can deal with well, you are free to try anything
 * Have you any advice for me?
 * Tell me about the robot apocalypse
 * Bye/goodbye/see you
+* Will notice if you are speaking about your Mum or Dad.
 
 ### Useful links / Research: 
 _Eliza in other languages :_ 
@@ -78,7 +79,7 @@ _Html & JavaScript :_
 _MarkDown :_
 * https://dillinger.io/
 
-I also used a lot of Class notes and links give through our class site.
+I also used a lot of Class notes and links given through our class site.
 
 Author : Thomas Duffy, GMIT.
 
