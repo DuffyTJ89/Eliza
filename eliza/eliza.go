@@ -107,9 +107,6 @@ func Ask(userInput string) string { //
 			match := resp.re.FindStringSubmatch(userInput)
 			//match[0] is full match, match[1] is the capture group
 			captured := match[1]
-
-			// remove punctuation to be added
-
 			captured = subWords(captured)
 
 			formatAnswer := getRandomAnswer(resp.answers) // get random element.

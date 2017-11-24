@@ -42,6 +42,17 @@ Below is a list of inputs Eliza can deal with well, you are free to try anything
 * Why do you ____
 * I need ____
 * Are you ____
+* Will you ___
+* Do you remember___
+* Where do you live ___
+* I live in ____
+* Eliza
+* Yes
+* No
+* Tell me a joke or tell joke
+* Have you any advice for me?
+* Tell me about the robot apocalypse
+* Bye/goodbye/see you
 
 ### Useful links / Research: 
 _Eliza in other languages :_ 
@@ -54,18 +65,18 @@ _Ajax :_
 
 
 _Regular Expressions:_
-* https://regex101.com/
-* http://www.rexegg.com/regex-quickstart.html
-* https://regexr.com/
+*https://regex101.com/
+*http://www.rexegg.com/regex-quickstart.html
+*https://regexr.com/
 
 _Go Lang:_
-* https://golang.org/doc/
+*https://golang.org/doc/
 
 _Html & JavaScript :_
-* https://getbootstrap.com/docs/4.0/getting-started/introduction/
+*https://getbootstrap.com/docs/4.0/getting-started/introduction/
 
 _MarkDown :_
-* https://dillinger.io/
+*https://dillinger.io/
 
 I also used a lot of Class notes and links give through our class site.
 

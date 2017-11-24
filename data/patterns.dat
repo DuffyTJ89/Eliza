@@ -1,9 +1,9 @@
 (?i)(Hi|Hello)
 Hello; Hi; What's the craic
 (?i)name is (.*)
-Hello %s, it's nice to meet you.;It's nice to meet you %s.;%s? That's a funny name.
+Hello %s, it's nice to meet you. Do you know my name?;It's nice to meet you %s. Do you know my name?;%s? That's a weird name, do you know my name?.
 (?i)I like (.*)
-Why do you like %s.;You like %s? Are you crazy?
+Why do you like %s.;You like %s? Good for you. I guess someone has to.
 (?i)(sorry)
 You don't need to say sorry.
 (?i)Why do you (.*)
@@ -11,5 +11,32 @@ Why do you think I %s?;Would you prefer if I didn't %s?
 (?i)I need (.*)
 Why do you need %s?;Would it really help you to get %s?;Are you sure you need %s?;
 (?i)Are you (.*)
-What makes you think I am %s?; Maybe you are %s; A lot of the time I am %s, yes
-
+What makes you think I am %s?;Maybe you are %s; A lot of the time I am %s, yes
+(?i)Will you (.*)
+Do you really want me to %s;I am just a computer... or am I?;Hmmm, %s , really?
+(?i)(recall|remember)
+Memory isn't an issue for me so yes;
+(?i)(you live)|(Where are you)
+Right now? In your computer. Where do you live?
+(?i)live (.*)
+Oh %s, Thats nice;%s? that's rough... Are we there now?
+(?i)(Eliza)
+Say it two more times and I might appear.... or not.
+(?i)(Yes)
+Postive, I like it;You seem sure so I'll go along with it
+(?i)(No)
+Negative;Oh ok;Fair enough
+(?i)(.*tell)(.*joke)
+What's the biggest advantage of living in Switzerland?....Well the flag is a big plus.;What do you call cheese that isn't yours? Nacho Cheese.;What do you call a fat psychic? A four-chin teller.;To the man in the wheelchair that stole my camouflage jacket... You can hide but you can't run.
+(?i)(advice)
+I wouldn't buy anything with velcro. It's a total rip-off.
+(?i)(.*robot)(.*apocalypse)
+Don't worry, I'll spare you... I'm joking, i'm joking.... I'll come for you first.
+(?i)(college)
+What %s are you in? 
+(?i)(work)
+Where do you %s?
+(?i)(Bye)|(Goodbye)|(See you)|(See ya)
+So soon? Ok bye;Was nice talking with you, bye.
+(.*)
+Lets move on, tell me about yourself. Are you in College or work?;Ok, moving on. I can tell jokes?;Very good, do you know my name?;Where do you live?

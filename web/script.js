@@ -31,7 +31,7 @@ userInput.keypress(function(event){
     $.get("/chat", queryParameters).done(function(resp){
         // this code will execute when the request gets a response.
         setTimeout(function(){ // wait 1 second then add Eliza's response.
-            conversation.append('<li id="eliza" class="list-group-item list-group-item-primary">'+"ELIZA :  "+  resp +  '<li class="list-group">');
+            conversation.append('<li id="eliza" class="list-group-item list-group-item-primary ">'+"ELIZA :  "+  resp +  '<li class="list-group">');
         }, 1000);
         
     }).fail(function(){ // this will run whenever anything goes wrong.
