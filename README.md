@@ -1,5 +1,6 @@
 # Eliza - Data Representation & Querying Assignment
-Chatbot in GO
+
+
 
 I am a third year Software development student at GMIT and the following is a chatbot using Go lang, HTML, JavaScript and Regular Expressions
 
@@ -42,5 +43,32 @@ Below is a list of inputs Eliza can deal with well, you are free to try anything
 * I need ____
 * Are you ____
 
+### Useful links / Research: 
+_Eliza in other languages :_ 
+* https://www.smallsurething.com/implementing-the-famous-eliza-chatbot-in-python/
+
+_Ajax :_ 
+* https://www.w3schools.com/xml/ajax_intro.asp
+* https://www.w3schools.com/jquery/ajax_ajax.asp
+* https://openclassrooms.com/courses/use-javascript-on-the-web/make-your-first-ajax-request
+
+
+_Regular Expressions:_
+*https://regex101.com/
+*http://www.rexegg.com/regex-quickstart.html
+*https://regexr.com/
+
+_Go Lang:_
+*https://golang.org/doc/
+
+_Html & JavaScript :_
+*https://getbootstrap.com/docs/4.0/getting-started/introduction/
+
+_MarkDown :_
+*https://dillinger.io/
+
+I also used a lot of Class notes and links give through our class site.
+
+Author : Thomas Duffy, GMIT.
 
 
